@@ -10,7 +10,9 @@ const app = express();
 
 // use middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: "https://b36-frontend.netlify.app/"
+}));
 app.use("/api", userRoutes);
 app.use("/auth", authRoutes);
 app.use("/products", productRoutes);
